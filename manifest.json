@@ -6,7 +6,7 @@
 	"author": "Fernando Nunez",
 	
 	"browser_action": {
-		"default_icon": "tab-icon.png",
+		"default_icon": "./assets/icon.png",
 		"default_title": "/usr/zweih"
 	},
 

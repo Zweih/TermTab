@@ -1,0 +1,155 @@
+html, 
+body,
+h3 {
+	margin: 0;
+	padding: 0;
+}
+
+/* -------------------------------------------------------------------
+  BASE
+---------------------------------------------------------------------- */
+
+body {
+	background-color: #1B1D28;
+	align-items: center;
+	font-family: "Inconsolata", monospace;
+	font-size: 15px;
+}
+
+h3 {
+	display: inline;
+	padding-bottom: 5px;
+	font-size: 1em;
+}
+
+ul {
+	font-size: 20px;
+	list-style: none;    
+	color: #2aa198;
+}
+
+li:before {
+	content: ">"; /* Insert content that looks like bullets */
+	padding-right: 8px;
+	color: #0B0B61; /* Or a color you prefer */
+}
+
+a, a:visited {
+	display: block;
+	padding-top: 2px;
+	color: #F2F4E8;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:hover { color: #dc322f; }
+
+/* -------------------------------------------------------------------
+  COLORS
+---------------------------------------------------------------------- */
+
+.blue     {	color: #7A477F; }
+.cyan     { color: #2aa198; }
+.green    { color: #F3765F; }
+.magenta  { color: #000000; }
+.orange   { color: #cb4b16; }
+.red      { color: #dc322f; }
+.violet   { color: #6c71c4; }
+.yellow   { color: #b58900; }
+
+/* -------------------------------------------------------------------
+  LAYOUT
+---------------------------------------------------------------------- */
+
+#container {
+	top: 13%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	padding: 0 20px;
+	width: 894px;
+	height: auto;
+}
+
+#searchbox {
+	margin: 4px;
+	padding: 8px;
+	background-color: #552A34;
+	border: 5px solid #F03435;
+}
+
+#image {
+	margin: 4px;
+	width: 876px;
+	height: 337px;
+	background-color: #552A34;
+	border: 5px solid #F03435;
+}
+
+#links {
+	display: -moz-box;
+	display: -webkit-box;
+	width: 100%;
+}
+
+pre {
+	font-size: 15px;
+	font-family: "Inconsolata", monospace;
+	color: #2aa198;
+	display: -moz-box;
+	display: -webkit-box;
+	width: 100%;
+}
+
+.box {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  margin: 4px;
+  padding: 8px;
+  background-color: #552A34;
+  border: 5px solid #F03435;
+}
+
+/* -------------------------------------------------------------------
+  TERMINAL
+---------------------------------------------------------------------- */
+
+.window {
+	width: 98%;
+	border: 5px solid #F03435;
+	margin: auto;
+}
+
+.window .terminal {
+	/* border: 5px solid #7A477F; */
+	/* margin: 5px; */
+	padding: 4px;
+	background-color: black;
+	opacity: 1;
+	height: 218px;
+	color: white;
+	font-family: "Inconsolata", monospace;
+	font-weight: 200;
+	font-size: 15px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow-y: hidden;
+}
+
+.window .terminal::after {
+	content: "_";
+	animation: blink 0.5s steps(1) infinite;
+}
+
+.prompt {
+	color: #F03435;
+}
+
+.path {
+	color: #D82946;
+}
+
+@keyframes blink {
+  50% {
+    color: transparent;
+  }
+}
