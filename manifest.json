@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"name": "TermTab",
+	"description": "New tab page with customizable links, terminal, and theme.",
+	"version": "1",
+	"author": "Fernando Nunez",
+	
+	"browser_action": {
+		"default_icon": "tab-icon.png",
+		"default_title": "/usr/zweih"
+	},
+
+	"chrome_url_overrides": {
+		"newtab": "newtab.html"
+	},
+
+	"permissions": ["activeTab"]
+}
