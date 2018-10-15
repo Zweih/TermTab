@@ -42,32 +42,32 @@ $(document).ready(function() {
 	}
 
 	function echo(args) {
-		var str = args.join(" ");
+		let str = args.join(" ");
 		terminal.append(str + "\n");
 	}
 
 	function fortune() {
-		var sBrowser, sUsrAg = navigator.userAgent;
+		let sBrowser, sUsrAg = navigator.userAgent;
 
 		if(sUsrAg.indexOf("Chrome") > -1) {
 			terminal.append("This command doesn't work in Chrome. :(\nTry Firefox instead! >:3c\n");
 		} 
 		else {
-			var xhr = new XMLHttpRequest();
+			let xhr = new XMLHttpRequest();
 			xhr.open('GET', 'https://cdn.rawgit.com/bmc/fortunes/master/fortunes', false);
 			xhr.send(null);
 
 			if (xhr.status === 200) {
-				var fortunes = xhr.responseText.split("%");
-				var fortune = fortunes[getRandomInt(0, fortunes.length)].trim();
+				let fortunes = xhr.responseText.split("%");
+				let fortune = fortunes[getRandomInt(0, fortunes.length)].trim();
 				terminal.append(fortune + "\n");
 			}		
 		}
 	}
 	
 	function gSearch(args) {
-		var str1 = args.join("+");
-		var str2 = args.join(" ");
+		let str1 = args.join("+");
+		let str2 = args.join(" ");
 		terminal.append("http://www.google.com/search?q=" + str1 + "\n");
 		
 		console.log("Googling \"" + str1 + "\"");
@@ -76,14 +76,14 @@ $(document).ready(function() {
 	}
 	
 	function gSearchLucky(args) {
-		var str = args.join(" ");
+		let str = args.join(" ");
 		terminal.append("https://www.google.com/webhp?#q=" + encodeURIComponent(str) + "&btnI=I\n");
 		document.location.href = "https://www.google.com/webhp?#q=" + encodeURIComponent(str) + "&btnI=I";
 	}
 	
 	function dSearch(args) {
-		var str1 = args.join("+");
-		var str2 = args.join(" ");
+		let str1 = args.join("+");
+		let str2 = args.join(" ");
 		terminal.append("https://duckduckgo.com/?q=" + str1 + "\n");
 		
 		console.log("Searching DuckDuckGo \"" + str1 + "\"");
@@ -92,8 +92,8 @@ $(document).ready(function() {
 	}
 	
 	function yt(args) {
-		var str1 = args.join("+");
-		var str2 = args.join(" ");
+		let str1 = args.join("+");
+		let str2 = args.join(" ");
 		terminal.append("https://www.youtube.com/results?search_query=" + str1 + "\n");
 		
 		console.log("yt searching \"" + str1 + "\"");
@@ -102,8 +102,8 @@ $(document).ready(function() {
 	}
 	
 	function wiki(args) {
-		var str1 = args.join("+");
-		var str2 = args.join(" ");
+		let str1 = args.join("+");
+		let str2 = args.join(" ");
 		terminal.append("https://en.wikipedia.org/wiki/Special:Search?search=" + str1 + "\n");
 		
 		console.log("wiki searching \"" + str1 + "\"");
@@ -112,13 +112,13 @@ $(document).ready(function() {
 	}
 	
 	function site(args) {
-		var str = args.join(" ");
+		let str = args.join(" ");
 		terminal.append("http://" + str + "\n");
 		document.location.href = "http://" + encodeURIComponent(str);
 	}
 	
 	function subreddit(args) {
-		var str = args.join(" ");
+		let str = args.join(" ");
 		terminal.append("https://reddit.com/r/" + str + "\n");
 		
 		console.log("wiki searching \"" + str + "\"");
@@ -134,24 +134,24 @@ $(document).ready(function() {
 	
 	// END COMMANDS
 
-	var terminal = $(".terminal");
-	var prompt = "/usr/zweih";
-	var path = ">";
+	let terminal = $(".terminal");
+	let prompt = "/usr/zweih";
+	let path = " ~$";
 
-	var commandHistory = [];
-	var historyIndex = 0;
+	let commandHistory = [];
+	let historyIndex = 0;
 
-	var command = "";
+	let command = "";
 
 	function processCommand() {
-		var isValid = false;
+		let isValid = false;
 
 		// Create args list by splitting the command
 		// by space characters and then shift off the
 		// actual command.
 
-		var args = command.split(" ");
-		var cmd = args[0];
+		let args = command.split(" ");
+		let cmd = args[0];
 		args.shift();
 
 		//execute command and mark isValid as true if match is found
@@ -223,7 +223,7 @@ $(document).ready(function() {
 
 		// No match was found...
 		if(!isValid) {
-			terminal.append("zsh: command not found: " + command + "\n");
+			terminal.append("bash: command not found: " + command + "\n");
 		}
 
 		// Add to command history and clean up.
@@ -234,7 +234,7 @@ $(document).ready(function() {
 	}
 
 	function updateScroll(){
-		var element = (document.getElementsByClassName("terminal"))[0];
+		let element = (document.getElementsByClassName("terminal"))[0];
 		element.scrollTop = element.scrollHeight;
 	}
 
@@ -263,7 +263,7 @@ $(document).ready(function() {
 	// catch special keys to prevent browser events
 	$(document).keydown(function(e) {
 		e = e || window.event;
-		var keyCode = typeof e.which === "number" ? e.which : e.keyCode;
+		let keyCode = typeof e.which === "number" ? e.which : e.keyCode;
 
 		switch(keyCode) {
 			case 8: // backspace, prevent from going back a page
@@ -283,11 +283,11 @@ $(document).ready(function() {
 						historyIndex++;
 				}
 
-				var cmd = commandHistory[historyIndex];
+				let prevCmd = commandHistory[historyIndex];
 
-				if(cmd !== undefined) {
+				if(prevCmd !== undefined) {
 					clearCommand();
-					appendCommand(cmd);
+					appendCommand(prevCmd);
 				}
 				break;
 
@@ -298,11 +298,11 @@ $(document).ready(function() {
 					historyIndex--;
 				}
 
-				var cmd = commandHistory[historyIndex];
+				let nextCmd = commandHistory[historyIndex];
 
-				if(cmd !== undefined) {
+				if(nextCmd !== undefined) {
 					clearCommand();
-					appendCommand(cmd);
+					appendCommand(nextCmd);
 				}
 				break;
 
@@ -325,7 +325,7 @@ $(document).ready(function() {
 	$(document).keypress(function(e) {
 		// Make sure we get the right event
 		e = e || window.event;
-		var keyCode = typeof e.which === "number" ? e.which : e.keyCode;
+		let keyCode = typeof e.which === "number" ? e.which : e.keyCode;
 
 		// Which key was pressed?
 		switch (keyCode) {
@@ -346,10 +346,10 @@ $(document).ready(function() {
 	});
 
 	// Get the date for our fake last-login
-	var date = new Date().toString(); date = date.substr(0, date.indexOf("GMT") - 1);
+	let date = new Date().toString(); date = date.substr(0, date.indexOf("GMT") - 1);
 
 	// Display last-login and promt
-	var loginStr = "Last login: " + date + " on zweih@bird_machine\n";
+	let loginStr = "Last login: " + date + " on zweih@bird_machine\n";
 	terminal.append(loginStr); 
 	displayPrompt();
 });
