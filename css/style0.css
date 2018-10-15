@@ -41,7 +41,17 @@ a, a:visited {
 	font-weight: bold;
 	text-decoration: none;
 }
-a:hover { color: #dc322f; }
+
+a:hover {
+	color: #dc322f;
+}
+
+.category {
+	color: #0B0B61;
+}
+.pre {
+	color: #000000;
+}
 
 /* -------------------------------------------------------------------
   LAYOUT

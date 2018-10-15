@@ -41,20 +41,17 @@ a, a:visited {
 	font-weight: bold;
 	text-decoration: none;
 }
-a:hover { color: #dc322f; }
+a:hover {
+	color: #dc322f;
+}
 
-/* -------------------------------------------------------------------
-  COLORS
----------------------------------------------------------------------- */
+.category {
+	color: #F3765F;
+}
 
-.blue     {	color: #7A477F; }
-.cyan     { color: #2aa198; }
-.green    { color: #F3765F; }
-.magenta  { color: #000000; }
-.orange   { color: #cb4b16; }
-.red      { color: #dc322f; }
-.violet   { color: #6c71c4; }
-.yellow   { color: #b58900; }
+.pre { 
+	color: #000000;
+}
 
 /* -------------------------------------------------------------------
   LAYOUT
