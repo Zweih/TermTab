@@ -15,11 +15,11 @@
 	 <head>
 		 <meta charset="UTF-8">
 		 <title>/usr/zweih</title>
+		 <link rel="stylesheet" href="./css/default.css">
 		 <link rel="stylesheet" href="./css/style1.css">
 		 <link rel="icon" href="./assets/icon.png" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
 		 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 		 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-		 <link rel="stylesheet" href="./css/repl.css">
 		 <script src="./js/jquery.min.js"></script>
 		 <script src="./js/jquery.modal.min.js"></script>
 		 <link rel="stylesheet" href="./css/jquery.modal.min.css" />
@@ -76,14 +76,43 @@
 		</div>
 
 		<div id="edit" class="modal">
-			<input class="jscolor" value="ab2567">
-			<a href="#" rel="modal:close">Close</a>
+			<div>
+				<label class="background">body background:
+					<input class="jscolor" value="ab2567">
+					<a href="#" id="body" class="apply">apply</a>
+				</label>
+				<label class="background">terminal background: 
+					<input class="jscolor" value="ab2567">
+					<a href="#" id=".terminal" class="apply">apply</a>
+				</label>
+				<label class="background">box background: 
+					<input class="jscolor" value="ab2567">
+					<a href="#" id=".box" class="apply">apply</a>
+				</label>
+				<label class="borders">borders: 
+						<input class="jscolor" value="ab2567">
+						<a href="#" class="apply">apply</a>
+				</label>
+				<label class="color">link color: 
+						<input class="jscolor" value="ab2567">
+						<a href="#" id="a" class="apply">apply</a>
+					</label>
+				<label class="color">category color: 
+					<input class="jscolor" value="ab2567">
+					<a href="#" id=".category" class="apply">apply</a>
+				</label>
+				<section class="theme-buttons">
+					<a href="#" class="apply all">apply all</a>
+					<a href="#" rel="modal:close">close</a>
+				</section>
+			</div>
 		</div>
 		
 		<script src="./js/theme.js"></script>
 		<script src="./js/banner.js"></script>
 		<script src="./js/terminal.js"></script>
 		<script src="./js/jscolor.js"></script>
+		<script src="./js/theme-editor.js"></script>
 	</body>
 	</html>
 	

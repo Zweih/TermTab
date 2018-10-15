@@ -16,6 +16,11 @@ body {
 	font-size: 15px;
 }
 
+#image {
+	background: url("../assets/0.jpg");
+	background-size: 876px 337px;
+}
+
 h3 {
 	display: inline;
 	padding-bottom: 5px;
